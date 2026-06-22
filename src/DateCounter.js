@@ -81,7 +81,3 @@ function DateCounter() {
   );
 }
 export default DateCounter;
-
-// const defineCount = function (e) {
-//   dispatch({ type: "setCount", payload: Number(e.target.value) });
-// }
