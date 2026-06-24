@@ -28,8 +28,6 @@ function DateCounter() {
   const dec = function () {
     // dispatch({ type: "dec", payload: -1 });
     dispatch({ type: "dec"});
-    // setCount((count) => count - 1);
-    // setCount((count) => count - step);
   };
 
   const inc = function () {
