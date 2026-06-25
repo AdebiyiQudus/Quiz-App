@@ -5,8 +5,7 @@ function reducer(state, action) {
   if (action.type === "inc") {
     return state + 1;
   }
-  // if (action.type === "inc") {
-  //   return state + action.payload }
+
 
   if (action.type === "dec") {
     return state - 1;
@@ -46,7 +45,7 @@ function DateCounter() {
 
   const reset = function () {
     // setCount(0);
-    setStep(1);
+    // setStep(1);
   };
 
   return (
