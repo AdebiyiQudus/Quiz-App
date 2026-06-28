@@ -1,9 +1,12 @@
-import { useReducer } from "react";
+//... state (previous state ) => ...state is copying the state as it was before the new update
+// current step value (count) is controlled by the reducer function (inc, dec, setCount, setStep, reset)
 
+import { useReducer } from "react";
  const initialState = {count: 0, step: 1}
 
 function reducer(state, action) {
   console.log(state, action)
+
   switch (action.type) {
     case "inc":
       return { ...state, count: state.count + state.step };
