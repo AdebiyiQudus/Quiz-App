@@ -31,7 +31,6 @@ function DateCounter() {
   date.setDate(date.getDate() + count);
 
   const dec = function () {
-    // dispatch({ type: "dec", payload: -1 });
     dispatch({ type: "dec"});
   };
 
