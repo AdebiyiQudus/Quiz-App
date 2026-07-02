@@ -1,5 +1,6 @@
 //... state (previous state ) => ...state is copying the state as it was before the new update
 // current step value (count) is controlled by the reducer function (inc, dec, setCount, setStep, reset)
+// action is an object that describes how to update the state
 
 import { useReducer } from "react";
  const initialState = {count: 0, step: 1}
