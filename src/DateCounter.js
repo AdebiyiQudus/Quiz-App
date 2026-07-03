@@ -2,7 +2,8 @@
 // current step value (count) is controlled by the reducer function (inc, dec, setCount, setStep, reset)
 // action is an object that describes how to update the state
 // dispatch is a function that sends (triggers) an action to the reducer function for a state update
-
+// action is an object that describes how the reducer should update the state
+// payload is the data that is sent with the action to update the state
 import { useReducer } from "react";
  const initialState = {count: 0, step: 1}
 
