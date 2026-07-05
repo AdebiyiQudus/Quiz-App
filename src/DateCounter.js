@@ -4,6 +4,7 @@
 // dispatch is a function that sends (triggers) an action to the reducer function for a state update
 // action is an object that describes how the reducer should update the state
 // payload is the data that is sent with the action to update the state
+
 import { useReducer } from "react";
  const initialState = {count: 0, step: 1}
 
