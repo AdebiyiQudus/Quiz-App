@@ -14,6 +14,7 @@ function reducer(state, action) {
     case "dataReceived":
       return { ...state, questions: action.payload, 
         status: "ready" };
+        
       case "dataFailed":
       return { ...state, status: "error" };
       default:
