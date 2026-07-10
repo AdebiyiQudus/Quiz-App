@@ -5,7 +5,7 @@ import Main from "./Main";
 const initialState = {
   questions: [],
 
-  // status can be "loading", "error", "ready, "active" or "success"
+  // status can be "loading", "error", "ready or "active" 
   status: "loading",
 }
 
@@ -14,7 +14,7 @@ function reducer(state, action) {
     case "dataReceived":
       return { ...state, questions: action.payload, 
         status: "ready" };
-        
+
       case "dataFailed":
       return { ...state, status: "error" };
       default:
