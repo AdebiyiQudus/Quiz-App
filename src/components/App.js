@@ -14,6 +14,7 @@ const initialState = {
   // status can be "loading", "error", "ready, "active", "finished"
   status: "loading",
   index: 0,
+  answer:null,
 };
 
 function reducer(state, action) {
@@ -25,6 +26,8 @@ function reducer(state, action) {
       return { ...state, status: "error" };
     case "start":
       return { ...state, status: "active" };
+      case "newAnswer":
+        return { ...state, answer: action.payload };
     default:
       throw new Error("Unknown action type");
   }
@@ -32,10 +35,10 @@ function reducer(state, action) {
 
 export default function App() {
   // const [state, dispatch] = useReducer(reducer, initialState);
-  // const = {questions, status, index} = state; OR
+  // const = {questions, status, index, answer} = state; OR
 
   // Destructuring the status and questions from useReducer
-  const [{ questions, status, index }, dispatch] = useReducer(
+  const [{ questions, status, index, answer }, dispatch] = useReducer(
     reducer,
     initialState,
   );
@@ -63,7 +66,8 @@ export default function App() {
           />
         )}
 
-        {status === "active" && <Question questionProp={questions[index]} />}
+        {status === "active" && <Question questionProp={questions[index]}
+        questDispatch={dispatch} answerProp={answer} />}
       </Main>
     </div>
   );
