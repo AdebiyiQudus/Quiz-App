@@ -1,4 +1,6 @@
 // index: To track the current question in the state
+// Any Prop used in this project is to update the state of the parent component, App.js, and not to update the state of the child component, Question.js
+// at() => is used to get an item from an array at a specific index/position. 
 
 import { useEffect, useReducer } from "react";
 import Header from "./Header";
@@ -14,7 +16,8 @@ const initialState = {
   // status can be "loading", "error", "ready, "active", "finished"
   status: "loading",
   index: 0,
-  answer:null,
+  answer: null,
+  points: 0,
 };
 
 function reducer(state, action) {
@@ -27,7 +30,15 @@ function reducer(state, action) {
     case "start":
       return { ...state, status: "active" };
       case "newAnswer":
-        return { ...state, answer: action.payload };
+        const question = state.questions.at(state.index);
+
+        return { 
+          ...state, 
+    // index btn the user clicks
+          answer: action.payload,
+          points: action.payload === question.correctOption ?
+           state.points + question.points : state.points,
+        }
     default:
       throw new Error("Unknown action type");
   }
@@ -67,7 +78,7 @@ export default function App() {
         )}
 
         {status === "active" && <Question questionProp={questions[index]}
-        questDispatch={dispatch} answerProp={answer} />}
+        answerDispatch={dispatch} answerProp={answer} />}
       </Main>
     </div>
   );
