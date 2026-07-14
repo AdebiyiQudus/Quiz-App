@@ -1,6 +1,7 @@
 // index: To track the current question in the state
 // Any Prop used in this project is to update the state of the parent component, App.js, and not to update the state of the child component, Question.js
 // at() => is used to get an item from an array at a specific index/position. 
+// questions: state.questions is used to keep the fetched API quiz questions intact even after resetting the game.
 
 import { useEffect, useReducer } from "react";
 import Header from "./Header";
