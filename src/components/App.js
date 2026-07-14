@@ -59,6 +59,22 @@ function reducer(state, action) {
               highscore: state.points > state.highscore 
               ? state.points : state.highscore,
             };
+
+// Overwrite the questions [] in the initialState with the questions fetched from the API and reset the other state properties to their initial values. Also change status to "ready" to show the StartScreen component again.
+            case "restart":
+              return{
+                ...initialState,
+                questions: state.questions,
+                status: "ready",
+              }
+              // OR return {
+              //   ...state,
+              //   status: "ready",
+              //   index: 0,
+              //   answer: null,
+              //   points: 0,
+              //   highscore: 0,
+              // };
     default:
       throw new Error("Unknown action type");
   }
@@ -97,7 +113,7 @@ export default function App() {
         {status === "ready" && (
           <StartScreen
             numQuestionsProp={numQuestions}
-            dispatchProp={dispatch}
+            startDispatch={dispatch}
           />
         )}
 
@@ -117,7 +133,7 @@ export default function App() {
     }
         {status === "finished" && <FinishScreen pointsProp={points} 
         maxPossiblePointsProp={maxPossiblePoints}
-        highscoreProp={highscore} />}
+        highscoreProp={highscore} restartDispatch={dispatch}/>}
       </Main>
     </div>
   );

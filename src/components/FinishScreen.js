@@ -1,4 +1,5 @@
-function FinishScreen({ pointsProp, maxPossiblePointsProp,highscoreProp }) {
+function FinishScreen({ pointsProp, maxPossiblePointsProp,
+  highscoreProp, restartDispatch }) {
   const percentage = (pointsProp / maxPossiblePointsProp) * 100;
 
   let emoji;
@@ -17,6 +18,13 @@ function FinishScreen({ pointsProp, maxPossiblePointsProp,highscoreProp }) {
     </p>
     <p className="highscore"> (Highscore: {highscoreProp})
       points </p>
+
+      <button className="btn btn-ui"
+        onClick={() => restartDispatch({ type: "restart" })}
+        
+      >
+        Restart Quiz
+      </button>
     </>
   )
 }
