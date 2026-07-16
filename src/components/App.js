@@ -13,6 +13,8 @@ import Question from "./Question";
 import NextButton from "./NextButton";
 import Progress from "./Progress";
 import FinishScreen from "./FinishScreen";
+import Footer from "./Footer";
+import Timer from "./Timer";
 
 const initialState = {
   questions: [],
@@ -21,7 +23,7 @@ const initialState = {
   status: "loading",
   index: 0,
   answer: null,
-  points: 0,
+  points: 0, 
   highscore: 0,
 };
 
@@ -126,11 +128,16 @@ export default function App() {
          <Question questionProp={questions[index]}
         answerDispatch={dispatch} answerProp={answer}
         />
+
+        <Footer>
+        <Timer />
         <NextButton nextBtnDispatch={dispatch} 
         answerProp={answer} indexProp={index} 
         numQuestions={numQuestions} />
+      
+          
+         </Footer>
         </>
-    }
         {status === "finished" && <FinishScreen pointsProp={points} 
         maxPossiblePointsProp={maxPossiblePoints}
         highscoreProp={highscore} restartDispatch={dispatch}/>}
