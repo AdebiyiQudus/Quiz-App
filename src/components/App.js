@@ -4,6 +4,7 @@
 // questions: state.questions is used to keep the fetched API quiz questions intact even after resetting the game.
 
 import { useEffect, useReducer } from "react";
+
 import Header from "./Header";
 import Main from "./Main";
 import Error from "./Error";
@@ -138,6 +139,8 @@ export default function App() {
           
          </Footer>
         </>
+
+}
         {status === "finished" && <FinishScreen pointsProp={points} 
         maxPossiblePointsProp={maxPossiblePoints}
         highscoreProp={highscore} restartDispatch={dispatch}/>}
