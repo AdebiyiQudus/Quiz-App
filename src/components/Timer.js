@@ -5,9 +5,14 @@ import { useEffect } from "react";
 
 function Timer({ dispatchTimer, secondsRemainingProp }) {
   useEffect(function() {
-  setInterval(function() {
-    dispatchTimer({ type: "tick" });
+    const id = setInterval(function () {
+      dispatchTimer({ type: "tick" });
     }, 1000);
+
+    // Return a cleanup function to clear it when the component unmounts
+    return function () {
+      clearInterval(id);
+    };
   }, [dispatchTimer]);
   return <div className="timer">{secondsRemainingProp}</div>;
 }
