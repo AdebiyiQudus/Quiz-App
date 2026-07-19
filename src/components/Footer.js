@@ -1,6 +1,4 @@
-import { Children } from "react";
-
-function Footer() {
+function Footer({Children}) {
   return (
     <div>
       <footer> {Children}</footer>
@@ -9,3 +7,4 @@ function Footer() {
 }
 
 export default Footer;
+ 

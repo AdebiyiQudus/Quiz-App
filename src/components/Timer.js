@@ -4,11 +4,10 @@
 import { useEffect } from "react";
 
 function Timer() {
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      console.log("tick");
+  useEffect(function() {
+  setInterval(function() {
+      // console.log("tick");
     }, 1000);
-    return () => clearInterval(intervalId);
   }, []);
   return <div className="timer">05:00</div>;
 }

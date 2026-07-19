@@ -27,6 +27,7 @@ const initialState = {
   answer: null,
   points: 0, 
   highscore: 0,
+  secondsRemaining: 10,
 };
 
 function reducer(state, action) {
@@ -79,6 +80,8 @@ function reducer(state, action) {
               //   points: 0,
               //   highscore: 0,
               // };
+
+              case "tick":
     default:
       throw new Error("Unknown action type");
   }
