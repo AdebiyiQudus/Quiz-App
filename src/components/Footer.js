@@ -1,7 +1,7 @@
-function Footer({Children}) {
+function Footer({children}) {
   return (
     <div>
-      <footer> {Children}</footer>
+      <footer> {children}</footer>
     </div>
   )
 }

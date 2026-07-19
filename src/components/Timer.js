@@ -3,13 +3,13 @@
 // minutes => Math.floor(secondsRemaining / 60) = 450/60 = 7.5 => 7 minutes
 import { useEffect } from "react";
 
-function Timer() {
+function Timer({ dispatchTimer, secondsRemainingProp }) {
   useEffect(function() {
   setInterval(function() {
-      // console.log("tick");
+    dispatchTimer({ type: "tick" });
     }, 1000);
-  }, []);
-  return <div className="timer">05:00</div>;
+  }, [dispatchTimer]);
+  return <div className="timer">{secondsRemainingProp}</div>;
 }
 
 export default Timer
