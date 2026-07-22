@@ -149,7 +149,8 @@ export default function App() {
 
         <Footer>
 
-        <Timer dispatchTimer = {dispatch} secondsRemainingProp={secondsRemaining} />
+        <Timer dispatchTimer = {dispatch} 
+        secondsRemainingProp={secondsRemaining} />
 
         <NextButton nextBtnDispatch={dispatch} 
         answerProp={answer} indexProp={index} 
