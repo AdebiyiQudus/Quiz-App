@@ -7,8 +7,7 @@ function Nextbutton({ nextBtnDispatch, answerProp,
   return (
     <div>
       <button className="btn btn-ui"
-        onClick={() => nextBtnDispatch({ type: "nextQuestion" })}
-        
+        onClick={() => nextBtnDispatch({ type: "nextQuestion" })}      
       >
         Next
       </button>
@@ -19,8 +18,7 @@ function Nextbutton({ nextBtnDispatch, answerProp,
   return (
     <div>
       <button className="btn btn-ui"
-        onClick={() => nextBtnDispatch({ type: "finish" })}
-        
+        onClick={() => nextBtnDispatch({ type: "finish" })}  
       >
         Finish
       </button>
