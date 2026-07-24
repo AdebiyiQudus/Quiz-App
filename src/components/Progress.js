@@ -7,6 +7,7 @@ function Progress({ indexProp, numQuestions, answerProp,
     <header className="progress">
       <progress max={numQuestions} 
       value={indexProp + Number(answerProp !== null)} />
+      
       <p>
         Question <strong>{indexProp + 1}
           </strong> / <strong>{numQuestions}</strong>
