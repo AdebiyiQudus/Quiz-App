@@ -26,7 +26,8 @@ const initialState = {
 
 function reducer(state, action) {
   // All operations (expect for opening account) can only be performed if isActive is true.
-  if (!state.isActive && action.type !== "openAccount") return state;
+  if (!state.isActive && action.type !== "openAccount") 
+    return state;
 
   switch (action.type) {
     case "openAccount":
