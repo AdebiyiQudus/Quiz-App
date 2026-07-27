@@ -1,5 +1,3 @@
-import "./styles.css";
-import { useReducer } from "react";
 /*
 INSTRUCTIONS / CONSIDERATIONS:
 
@@ -17,6 +15,9 @@ INSTRUCTIONS / CONSIDERATIONS:
 
 7. Customer can only close an account if there is no loan, AND if the balance is zero. If this condition is not met, just return the state. If the condition is met, the account is deactivated and all money is withdrawn. The account basically gets back to the initial state
 */
+
+import "./styles.css";
+import { useReducer } from "react";
 
 const initialState = {
   balance: 0,
